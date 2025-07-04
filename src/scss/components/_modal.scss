@@ -8,12 +8,10 @@
     justify-content: center;
     align-items: center;
     z-index: $z-modal;
-    // visibility: hidden;
     transform: scaleX(0);
     transition: backdrop-filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     
     &.active {
-        // visibility: visible;
         backdrop-filter: blur(0.2rem);
         transform: scaleX(1);
     }

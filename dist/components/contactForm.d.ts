@@ -1,4 +1,2 @@
-export declare class ContactForm {
-    constructor();
-}
+export declare function initContactForm(): void;
 //# sourceMappingURL=contactForm.d.ts.map
