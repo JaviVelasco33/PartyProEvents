@@ -415,33 +415,36 @@ button {
   }
 }
 .modal {
-  display: flex;
   position: fixed;
-  width: 50dvw;
-  height: auto;
-  padding: 2rem 4rem;
-  gap: 2rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 1rem;
-  background-color: rgba(43, 255, 184, 0.5);
-  backdrop-filter: blur(0.2rem);
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 100;
-  visibility: hidden;
+  transform: scaleX(0);
+  transition: backdrop-filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .modal.active {
-  visibility: visible;
+  backdrop-filter: blur(0.2rem);
+  transform: scaleX(1);
 }
 
 .modal-content {
-  width: 100%;
-  height: 100%;
+  position: flex;
+  width: 90%;
+  height: 35%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 2rem;
-  color: #092921;
+  border-radius: 1rem;
+  background-color: rgba(0, 110, 74, 0.8);
+  backdrop-filter: blur(0.3rem);
+  padding: 2rem 2rem;
+  color: white;
 }
 .modal-content .close {
   position: absolute;
@@ -460,6 +463,17 @@ button {
   font-size: 1.2rem;
 }
 
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 50%;
+    height: 25%;
+  }
+}
 .rev-slider-content {
   position: relative;
   width: 100%;
