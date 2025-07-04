@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PartyPro Events</title>
+        <link rel="stylesheet" href="src/css/main.css" />
+        <link rel="shortcut icon" href="/assets/img/logo/PartyPro-Logo-Y.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header id="header">
+            <nav class="nav-bar">
+                <div class="header-logo">
+                    <img
+                        src="assets/img/logo/PartyPro-Logo-White.webp"
+                        alt="PartyPro Logo"
+                        loading="lazy"
+                    />
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero">Home</a></li>
+                    <li class="nav-item"><a href="#events">Events</a></li>
+                    <li class="nav-item"><a href="#services">Services</a></li>
+                    <li class="nav-item"><a href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <!-- Hero Section -->
+            <section id="hero">
+                <div class="hero-bg"></div>
+                <div class="hero-content">
+                    <h1>Eventos que crean momentos</h1>
+                    <p>
+                        En PartyPro Events realizamos diferentes eventos para
+                        que esa fecha especial se convierta
+                        en un momento memorable.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section id="events">
+                <div class="events-content">
+                    <div class="event-filter">
+                        <h2>Filtro:</h2>
+                        <select class="select-filter">
+                            <option value="all">Todos los eventos</option>
+                            <option value="catering">Catering</option>
+                            <option value="party">Fiesta</option>
+                            <option value="corporate">Corporativo</option>
+                            <option value="theme">Tematica</option>
+                            <option value="weeding">Boda</option>
+                        </select>
+                    </div>
+                    <div class="card-event" data-id="1" data-type="catering corporate">
+                        <div class="card-img">
+                            <img
+                                src="assets/img/events/event-1.webp"
+                                alt="Event 1"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Evento 1</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                            <button class="btn-details">Detalles</button>
+                        </div>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Detalles Evento 1</h2>
+                                <p>Contenido del modal para el evento 1. Lore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-event" data-id="2" data-type="party theme">
+                        <div class="card-img">
+                            <img
+                                src="assets/img/events/event-2.webp"
+                                alt="Event 2"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Evento 2</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                            <button class="btn-details">Detalles</button>
+                        </div>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Detalles Evento 2</h2>
+                                <p>Contenido del modal para el evento 2.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-event" data-id="3" data-type="catering theme">
+                        <div class="card-img">
+                            <img
+                                src="assets/img/events/event-3.webp"
+                                alt="Event 3"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Evento 3</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                            <button class="btn-details">Detalles</button>
+                        </div>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Detalles Evento 3</h2>
+                                <p>Contenido del modal para el evento 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-event" data-id="4" data-type="party">
+                        <div class="card-img">
+                            <img
+                                src="assets/img/events/event-4.webp"
+                                alt="Event 4"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Evento 4</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                            <button class="btn-details">Detalles</button>
+                        </div>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Detalles Evento 4</h2>
+                                <p>Contenido del modal para el evento 4.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-event" data-id="5" data-type="catering weeding">
+                        <div class="card-img">
+                            <img
+                                src="assets/img/events/event-5.webp"
+                                alt="Event 5"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Evento 5</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                            <button class="btn-details">Detalles</button>
+                        </div>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Detalles Evento 5</h2>
+                                <p>Contenido del modal para el evento 5.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-event" data-id="6" data-type="party">
+                        <div class="card-img">
+                            <img
+                                src="assets/img/events/event-6.webp"
+                                alt="Event 6"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Evento 6</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                            <button class="btn-details">Detalles</button>
+                        </div>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Detalles Evento 6</h2>
+                                <p>Contenido del modal para el evento 6. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, numquam voluptatem modi ratione quis rem at reprehenderit voluptas reiciendis quo cumque ea. Sequi voluptas, hic ratione atque at tempora aperiam!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services">
+                <div class="services-content">
+                    <div class="card-service" onclick="this.classList.toggle('active')" data-id="1">
+                        <div class="card-img">
+                            <img class="icon-service" src="assets/img/services/icons/planning.png" alt="Service 1" loading="lazy">
+                            <img class="img-service"
+                                src="assets/img/services/service-1.webp"
+                                alt="Service 1"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Planificación</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-service" onclick="this.classList.toggle('active')" data-id="2">
+                        <div class="card-img">
+                            <img class="icon-service" src="assets/img/services/icons/decoracion.png" alt="Service 1" loading="lazy">
+                            <img class="img-service"
+                                src="assets/img/services/service-2.webp"
+                                alt="Service 2"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Decoración</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-service" onclick="this.classList.toggle('active')" data-id="3">
+                        <div class="card-img">
+                            <img class="icon-service" src="assets/img/services/icons/catering.png" alt="Service 1" loading="lazy">
+                            <img class="img-service"
+                                src="assets/img/services/service-3.webp"
+                                alt="Service 3"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Catering</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-service" onclick="this.classList.toggle('active')" data-id="4">
+                        <div class="card-img">
+                            <img class="icon-service" src="assets/img/services/icons/animacion.png" alt="Service 1" loading="lazy">
+                            <img class="img-service"
+                                src="assets/img/services/service-4.webp"
+                                alt="Service 4"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Animación</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-service" onclick="this.classList.toggle('active')" data-id="5">
+                        <div class="card-img">
+                            <img class="icon-service" src="assets/img/services/icons/grabacion.png" alt="Service 1" loading="lazy">
+                            <img class="img-service"
+                                src="assets/img/services/service-5.webp"
+                                alt="Service 5"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>Grabación</h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolorum, quia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section id="reviews">
+                <div class="reviews-content">
+                    <img src="assets/img/reviews/reviews-bg.webp" class ="reviews-bg" alt="Reviews Background" loading="lazy">
+                    <div class="rev-slider">
+                        <button class="btn-slider prev" aria-label="Previous"> 
+                            &lt;
+                        </button>
+
+
+                        <div class="rev-slider-content">
+                            <div class="rev-item active">
+                                <div class="user-info">
+                                    <img src="assets/img/reviews/user1.webp" alt="User 1" loading="lazy">
+                                    <h2>User 1</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum pariatur amet mollitia iusto incidunt hic voluptatum dolorum ullam at, corrupti cum ea voluptate, deserunt adipisci maiores, commodi quas! Ut, vel.</p>
+                            </div>
+                            <div class="rev-item">
+                                <div class="user-info">
+                                    <img src="assets/img/reviews/user2.webp" alt="User 1" loading="lazy">
+                                    <h2>User 2</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quia.</p>
+                            </div>
+                            <div class="rev-item">
+                                <div class="user-info">
+                                    <img src="assets/img/reviews/user3.webp" alt="User 1" loading="lazy">
+                                    <h2>User 3</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quia.</p>
+                            </div>
+                            <div class="rev-item">
+                                <div class="user-info">
+                                    <img src="assets/img/reviews/user4.webp" alt="User 1" loading="lazy">
+                                    <h2>User 4</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quia.</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-slider next" aria-label="Next">
+                            &gt;
+                        </button>                        
+                    </div>
+                    
+                    <div class="slider-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                        <span class="indicator" data-index="3"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3>Consultanos</h3>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="event">Tipo de Evento</label>
+                                <select id="event" name="event">
+                                    <option value="1">Evento 1</option>
+                                    <option value="2">Evento 2</option>
+                                    <option value="3">Evento 3</option>
+                                    <option value="4">Evento 4</option>
+                                    <option value="5">Evento 5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Fecha</label>
+                                <input type="date" id="date" name="date" placeholder="Fecha">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" placeholder="Mensaje"></textarea>
+                            </div>
+                            <button class="btn-primary" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contacto</h3>
+                        <hr>
+                        <p>Email:
+                            <br>
+                            <a href="mailto:info@partyproevents.com">
+                                    info@partyproevents.com
+                            </a>
+                        </p>
+                        <p>Teléfono:
+                            <br>
+                            <a href="tel:+34123456789">
+                                    +34 123 456 789
+                            </a>
+                        </p>
+                        
+                        <p>Dirección:
+                            <br>
+                            Calle Falsa 123, Madrid, España</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer id="footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img
+                            src="assets/img/logo/PartyPro-Logo-White.webp"
+                            alt="PartyPro Logo"
+                            loading="lazy"
+                        />
+                        <p>Donde los eventos se convierten en momentos.</p>
+                    </div>
+                    <div class="footer-info">
+                        <p>PartyPro Events ®</p>
+                        <p>Todos los derechos reservados.</p>
+                        <a href="#">Privacidad y terminos de uso</a>
+                    </div>
+            </footer>
+        </main>
+        <script type="module" src="dist/main.js"></script>
+    </body>
+</html>

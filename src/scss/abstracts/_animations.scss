@@ -1,0 +1,76 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes brightOn {
+    from {
+        filter: brightness(0.3);
+    }
+    to {
+        filter: brightness(1);
+    }
+}
+
+@keyframes brightOff {
+    from {
+        filter: brightness(1);
+    }
+    to {
+        filter: brightness(0.3);
+    }
+}
+
+@keyframes slideInUpY {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideInDownY {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideOutUpY {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slideOutDownY {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+
+// animacion de flotar para el titulo y el modal
+
+// animacion de temblor para los servicios

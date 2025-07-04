@@ -1,0 +1,63 @@
+#hero {
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+}
+
+.hero-bg {
+    position: absolute;
+    background-image: url("/assets/img/hero-bg.webp");
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-back;
+    filter: brightness(0.5);
+    animation: brightOff 2s ease-in-out forwards;
+}
+
+.hero-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    h1 {
+        font-size: 2rem;
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 0;
+        color: white;
+        animation: slideInUpY 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+    }
+
+    p {
+        font-size: 1rem;
+        color: white;
+        margin: 1rem 4rem;
+        animation: slideInDownY 2s ease-in-out forwards, fadeIn 3s ease-in-out forwards;
+    }
+
+    @include respond-to(md) {
+        p {
+            margin: 1rem 12rem;
+        }
+    }
+
+    @include respond-to(lg) {
+        h1 {
+            font-size: 5rem;
+        }
+
+        p {
+            font-size: 1.7rem;
+            margin: 1rem 20rem;
+        }
+    }
+}

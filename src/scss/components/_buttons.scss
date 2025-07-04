@@ -1,0 +1,95 @@
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 1rem;
+    border: none;
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    color: black;
+    border: $color-secondary 2px solid;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: darken($color-primary, 20%);
+        color: white;
+        box-shadow: inset -1px -1px 4px lighten($color-secondary, 20%),
+                    inset 1px 1px 4px darken($color-secondary, 60%);
+    }
+    
+    &:active {
+        background-color: $color-secondary;
+        color: white;
+        box-shadow: inset -2px -2px 4px lighten($color-secondary, 20%),
+                    inset 2px 2px 4px darken($color-secondary, 60%);
+    }
+}
+
+.btn-secondary {
+    background-color: $color-secondary;
+    color: white;
+    border: darken($color-secondary, 10%) 2px solid;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: darken($color-primary, 20%);
+        color: white;
+        box-shadow: inset -2px -2px 4px lighten($color-primary, 10%),
+                    inset 2px 2px 4px darken($color-primary, 40%);
+    }
+    
+    &:active {
+        background-color: $color-primary;
+        color: black;
+        box-shadow: inset -2px -2px 4px lighten($color-primary, 20%),
+                    inset 2px 2px 4px darken($color-primary, 60%);
+    }
+}
+
+.btn-details {
+    background-color: transparent;
+    color: $text-color;
+    border: solid $text-color 2px;
+    margin: 1rem 0 0;
+    align-self: flex-end;
+    box-shadow:  -3px -3px 10px $light-color,
+                3px 3px 10px $light-color;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        box-shadow: inset -2px -2px 15px $dark-color,
+                    inset 2px 2px 15px $dark-color;
+        transform: scale(1.05);
+    }
+    
+    &:active {
+        box-shadow: inset -2px -2px 5px $color-primary,
+                    inset 2px 2px 5px $color-primary;
+        transform: scale(0.95);
+    }
+}
+
+.btn-slider {
+    border-radius: 100%;
+    padding: 0.6rem 1rem;
+    background-color: rgba($color-secondary, 0.8);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    border: solid $color-primary 2px;
+    box-shadow: 0px 0px 10px rgba($color-primary, 1),
+                inset 0px 0px 10px rgba($color-primary, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.9);
+        background-color: rgba($color-primary, 0.5);
+    }
+}

@@ -1,0 +1,224 @@
+//---------------------------Event-------------------------------
+.card-event {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $dark-color;
+    box-shadow: 0px 5px 10px $color-secondary;
+    border-radius: 1.2rem;
+    border: solid $color-secondary 2px;
+
+    &.hidden {
+        display: none !important;
+    }
+}
+    
+.card-img {
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+    transition: transform 0.5s ease-in-out;
+
+    img {
+        transition: filter 0.5s ease-in-out;
+    }
+}
+
+.card-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1rem;
+    color: $text-color;
+    transition: transform 0.45s ease-in-out, opacity 0.3s ease;
+
+    h2, p {
+        margin: 1rem 0;
+        font-size: 1rem;
+    }
+}
+//---------------------------Service-------------------------------
+.card-service {
+    height: 400px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2rem;
+    
+    .card-img {
+        background-color: $dark-color;
+        height: 110%;
+        border-radius: 2rem;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 0px 5px 10px $color-secondary;
+
+        .img-service {
+            filter: blur(0.1rem) brightness(0.8);
+        }
+
+        .icon-service {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: $z-front;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: transform 0.2s ease-in-out, opacity 0.5s ease;
+            filter: drop-shadow(0px 0px 10px rgba($color-primary, 1));
+        }
+    }
+    
+    .card-info {
+        position: absolute;
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1.5rem 3rem;
+        color: $text-color;
+        opacity: 0;
+        transform: scaleX(0);
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    &.active {
+        .card-img {
+            transform: rotateY(180deg);
+            
+            .img-service {
+                filter: blur(0.3rem) brightness(0.6);
+            }
+            
+            .icon-service {
+                opacity: 0;
+            }
+        }
+        
+
+        .card-info {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+}
+
+@include respond-to(md) {
+    .card-event{
+        width: 40%;
+    }
+
+    .card-service {
+        width: 40%;
+
+        .card-img {
+            height: auto;
+            width: 100%;
+        }
+    }
+}
+
+@include respond-to(lg) {
+    //---------------------------Event-------------------------------
+    .card-event{
+        width: 25%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        
+        &:hover {
+            
+            .card-img {
+                transform: rotateY(180deg);
+                
+                img {
+                    filter: blur(0.3rem) brightness(0.6);
+                }
+            }
+            .card-info {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+    }
+    
+    
+    .card-img {
+        height: 100%;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 2rem;
+        box-shadow: 5px 5px 3px rgba($color-secondary, 0.3),
+                    -3px -3px 3px rgba($color-primary, 0.5);
+        transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+        img {
+            transform: scale(1.02);
+        }
+    }
+
+    .card-info {
+        position: absolute;
+        width: 23.5%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 1rem 3rem;
+        color: $text-color;
+        opacity: 0;
+        transform: scaleX(0);
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease;
+    }
+
+    //-------------------------Service-----------------------------
+    .card-service {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        .card-info {
+            width: 15%;
+            height: 70%;
+            justify-content: center;
+        }
+
+        &:hover {
+            .card-img{
+                .icon-service {
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+    
+}
+
+

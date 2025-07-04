@@ -1,0 +1,48 @@
+#events {
+    width: 100dvw;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 4rem;
+    background-color: black;
+    box-shadow: 0px -100px 100px black;
+
+    .events-content {
+        width: 100%;
+        height: auto;
+        padding: 0rem;
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+
+        .event-filter {
+            width: 100%;
+            height: auto;
+            margin: 0 8rem;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            color: $text-color;
+            gap: 1rem;
+
+            .select-filter {
+                border-radius: 1rem;
+                padding: 0 1rem;
+                font-size: 1.1rem;
+                filter: drop-shadow(0px 0px 3px rgba($light-color, 0.5));
+
+                &:hover {
+                    filter: drop-shadow(0px 0px 10px rgba($light-color, 0.5));
+                }
+
+                &:active {
+                    filter: drop-shadow(0px 0px 5px rgba($light-color, 1));
+                }
+            }
+        }
+    }
+}

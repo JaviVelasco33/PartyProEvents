@@ -1,0 +1,84 @@
+#contact {
+    width: 100dvw;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6rem 4rem;
+    gap: 4rem;
+    background: linear-gradient(rgba(white, 1) 25%, 
+                                rgba($color-secondary, 0.5) 50%, 
+                                rgba(black, 1) 100%);
+
+    hr {
+        width: 100%;
+        height: 0.1rem;
+        border: none;
+        background-color: rgba($color-secondary, 0.7);
+    }
+
+
+}
+
+.contact-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 2rem;
+    border: solid $color-secondary 2px;
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba($dark-color, 0.8);
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        text-align: left;                        
+    }
+
+    a {
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+    }
+}
+
+@include respond-to(md) {
+
+    .contact-content {
+        width: 100%;
+        padding: 6rem 12rem;
+        justify-content: center;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+}
+
+@include respond-to(lg) {
+    .contact-content {
+        flex-direction: row;
+        align-items: start;
+        padding: 6rem 12rem;
+    }
+
+    .contact-info {
+        width: 30%;
+        padding: 2rem 4rem;
+    }
+}

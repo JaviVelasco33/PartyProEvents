@@ -1,0 +1,20 @@
+#services {
+    width: 100dvw;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 4rem;
+    margin: 6rem 0;
+    
+    .services-content {
+        width: 100%;
+        height: auto;
+        padding: 0rem;
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+}
