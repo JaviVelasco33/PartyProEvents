@@ -1,5 +1,6 @@
 //---------------------------Event-------------------------------
 .card-event {
+    position: relative;
     width: 100%;
     height: auto;
     display: flex;
@@ -14,7 +15,19 @@
     &.hidden {
         display: none !important;
     }
+
+    &[data-id="1"],
+    &[data-id="2"],
+    &[data-id="3"] {
+        transition: transform 0.2s linear, margin 0.2s linear, z-index 0.2s linear;
+        will-change: transform, margin, z-index;
+        transform: translateY(var(--card-y, 0px)) rotate(var(--card-rot, 0deg));
+        margin-left: var(--card-margin-left, 0px);
+        margin-right: var(--card-margin-right, 0px);
+        z-index: var(--card-z, 1);
+    }
 }
+
     
 .card-img {
     height: 100%;
@@ -181,7 +194,7 @@
 
     .card-info {
         position: absolute;
-        width: 23.5%;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;

@@ -34,14 +34,15 @@
         margin: 0;
         padding: 0;
         color: white;
-        animation: slideInUpY 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+        animation: slideInUpY 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards, float 8s ease-in-out infinite;
+        
     }
 
     p {
         font-size: 1rem;
         color: white;
         margin: 1rem 4rem;
-        animation: slideInDownY 2s ease-in-out forwards, fadeIn 3s ease-in-out forwards;
+        animation: slideInDownY 2s ease-in-out forwards, fadeIn 3s ease-in-out forwards, float 6s ease-in-out reverse infinite;
     }
 
     @include respond-to(md) {

@@ -83,5 +83,4 @@ export function initContactForm() {
 
     realTimeCheck();
     submitFeedback();
-    console.log('initContactForm');
 }

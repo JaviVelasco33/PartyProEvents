@@ -52,11 +52,8 @@ export function initContactForm() {
         if (oldMsg)
             oldMsg.remove();
         const msg = document.createElement('div');
-        console.log("crea el div");
         msg.className = 'form-success-msg';
-        console.log("añade la clase");
         msg.textContent = '¡Formulario enviado correctamente!';
-        console.log("pone el mensaje");
         document.body.appendChild(msg);
         setTimeout(() => {
             msg.remove();
@@ -64,6 +61,5 @@ export function initContactForm() {
     }
     realTimeCheck();
     submitFeedback();
-    console.log('initContactForm');
 }
 //# sourceMappingURL=contactForm.js.map

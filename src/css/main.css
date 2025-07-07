@@ -77,6 +77,75 @@
     transform: translateY(100%);
   }
 }
+@keyframes float {
+  0% {
+    text-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    text-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-10px);
+  }
+  100% {
+    text-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+@keyframes naturalFloat {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  12.5% {
+    transform: translate(3px, -8px);
+  }
+  25% {
+    transform: translate(-2px, -12px);
+  }
+  37.5% {
+    transform: translate(-8px, -6px);
+  }
+  50% {
+    transform: translate(-5px, 4px);
+  }
+  62.5% {
+    transform: translate(2px, 10px);
+  }
+  75% {
+    transform: translate(7px, 6px);
+  }
+  87.5% {
+    transform: translate(4px, -2px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes subtleFloat {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: translate(1px, -3px);
+  }
+  30% {
+    transform: translate(-1px, -5px);
+  }
+  45% {
+    transform: translate(-3px, -2px);
+  }
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(1px, 3px);
+  }
+  90% {
+    transform: translate(2px, 1px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -198,6 +267,7 @@ button {
 }
 
 .card-event {
+  position: relative;
   width: 100%;
   height: auto;
   display: flex;
@@ -211,6 +281,14 @@ button {
 }
 .card-event.hidden {
   display: none !important;
+}
+.card-event[data-id="1"], .card-event[data-id="2"], .card-event[data-id="3"] {
+  transition: transform 0.2s linear, margin 0.2s linear, z-index 0.2s linear;
+  will-change: transform, margin, z-index;
+  transform: translateY(var(--card-y, 0px)) rotate(var(--card-rot, 0deg));
+  margin-left: var(--card-margin-left, 0px);
+  margin-right: var(--card-margin-right, 0px);
+  z-index: var(--card-z, 1);
 }
 
 .card-img {
@@ -351,7 +429,7 @@ button {
   }
   .card-info {
     position: absolute;
-    width: 23.5%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -692,7 +770,6 @@ button {
   width: 100%;
   height: auto;
   margin: 0 8rem;
-  padding: 0 1rem;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -776,11 +853,11 @@ button {
     width: 40%;
   }
   .footer-logo img {
-    width: 50%;
+    width: 80%;
     height: auto;
   }
   .footer-logo p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     flex-wrap: nowrap;
     text-align: center;
   }
@@ -921,13 +998,13 @@ header .nav-bar .nav-list {
   margin: 0;
   padding: 0;
   color: white;
-  animation: slideInUpY 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+  animation: slideInUpY 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards, float 8s ease-in-out infinite;
 }
 .hero-content p {
   font-size: 1rem;
   color: white;
   margin: 1rem 4rem;
-  animation: slideInDownY 2s ease-in-out forwards, fadeIn 3s ease-in-out forwards;
+  animation: slideInDownY 2s ease-in-out forwards, fadeIn 3s ease-in-out forwards, float 6s ease-in-out reverse infinite;
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .hero-content p {
