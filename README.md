@@ -24,4 +24,4 @@ package.json: Archivo de configuración del proyecto.
 Puedes clonar este mismo repositorio y abrir el archivo index.html en tu navegador para ver el sitio web en funcionamiento.
 📌 Estado del proyecto:
 
-Este proyecto está actualmente en desarrollo y se irá actualizando hasta que se considere terminado.
+Este proyecto se da por finalizado y no se esperan actualizaciones en el futuro.
