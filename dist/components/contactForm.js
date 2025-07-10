@@ -53,7 +53,7 @@ export function initContactForm() {
             oldMsg.remove();
         const msg = document.createElement('div');
         msg.className = 'form-success-msg';
-        msg.textContent = '¡Formulario enviado correctamente!';
+        msg.textContent = '¡Gracias por contactar PartyPro Events! Le responderemos lo antes posible.';
         document.body.appendChild(msg);
         setTimeout(() => {
             msg.remove();

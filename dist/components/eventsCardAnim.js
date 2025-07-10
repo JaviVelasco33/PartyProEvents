@@ -10,6 +10,9 @@ export function initEventsCardAnim() {
     function lerp(a, b, t) {
         return a + (b - a) * t;
     }
+    function isCardsInNormalState(progress) {
+        return progress <= 0.01;
+    }
     function updateCards() {
         if (!eventSec || !cards.every(card => card))
             return;
@@ -32,17 +35,17 @@ export function initEventsCardAnim() {
         cards.forEach((card, i) => {
             if (!card)
                 return;
-            if (rect.bottom < 0 || rect.top > windowHeight) {
-                card.style.pointerEvents = 'none';
-            }
-            else {
-                card.style.pointerEvents = 'auto';
-            }
             card.style.setProperty('--card-y', lerp(normal[i].y, states[i].y, progress) + 'px');
             card.style.setProperty('--card-rot', lerp(normal[i].rot, states[i].rot, progress) + 'deg');
             card.style.setProperty('--card-margin-left', lerp(normal[i].marginLeft, states[i].marginLeft, progress) + 'px');
             card.style.setProperty('--card-margin-right', lerp(normal[i].marginRight, states[i].marginRight, progress) + 'px');
             card.style.setProperty('--card-z', lerp(normal[i].z, states[i].z, progress).toString());
+            if (isCardsInNormalState(progress)) {
+                card.style.pointerEvents = 'auto';
+            }
+            else {
+                card.style.pointerEvents = 'none';
+            }
         });
     }
     window.addEventListener('scroll', updateCards);

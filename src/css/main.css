@@ -45,7 +45,7 @@
     filter: brightness(0.3);
   }
 }
-@keyframes slideInUpY {
+@keyframes slideInUp {
   0% {
     transform: translateY(-100%);
   }
@@ -53,7 +53,7 @@
     transform: translateY(0%);
   }
 }
-@keyframes slideInDownY {
+@keyframes slideInDown {
   0% {
     transform: translateY(100%);
   }
@@ -61,7 +61,7 @@
     transform: translateY(0%);
   }
 }
-@keyframes slideOutUpY {
+@keyframes slideOutUp {
   0% {
     transform: translateY(0);
   }
@@ -69,12 +69,22 @@
     transform: translateY(-100%);
   }
 }
-@keyframes slideOutDownY {
+@keyframes slideOutDown {
   0% {
     transform: translateY(0);
   }
   100% {
     transform: translateY(100%);
+  }
+}
+@keyframes slideInDown-Opa {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes float {
@@ -91,59 +101,86 @@
     transform: translatey(0px);
   }
 }
-@keyframes naturalFloat {
+@keyframes entryServC1 {
   0% {
-    transform: translate(0px, 0px);
-  }
-  12.5% {
-    transform: translate(3px, -8px);
-  }
-  25% {
-    transform: translate(-2px, -12px);
-  }
-  37.5% {
-    transform: translate(-8px, -6px);
-  }
-  50% {
-    transform: translate(-5px, 4px);
-  }
-  62.5% {
-    transform: translate(2px, 10px);
-  }
-  75% {
-    transform: translate(7px, 6px);
-  }
-  87.5% {
-    transform: translate(4px, -2px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-@keyframes subtleFloat {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  15% {
-    transform: translate(1px, -3px);
+    transform: translate(700%, 20%) rotate(0deg);
   }
   30% {
-    transform: translate(-1px, -5px);
-  }
-  45% {
-    transform: translate(-3px, -2px);
-  }
-  60% {
-    transform: translate(-2px, 2px);
-  }
-  75% {
-    transform: translate(1px, 3px);
-  }
-  90% {
-    transform: translate(2px, 1px);
+    transform: translate(0%, 20%) rotate(-20deg);
   }
   100% {
-    transform: translate(0px, 0px);
+    transform: translate(0%, 20%) rotate(-20deg);
+  }
+}
+@keyframes entryServC2 {
+  0% {
+    transform: translate(600%, 20%) rotate(0deg);
+  }
+  30% {
+    transform: translate(-100%, 20%) rotate(-20deg);
+  }
+  50% {
+    transform: translate(0%, -10%) rotate(-10deg);
+  }
+  100% {
+    transform: translate(0%, -10%) rotate(-10deg);
+  }
+}
+@keyframes entryServC3 {
+  0% {
+    transform: translate(500%, 20%) rotate(0deg);
+  }
+  30% {
+    transform: translate(-200%, 20%) rotate(-20deg);
+  }
+  50% {
+    transform: translate(-100%, -10%) rotate(-10deg);
+  }
+  70% {
+    transform: translate(0%, -25%) rotate(0deg);
+  }
+  100% {
+    transform: translate(0%, -25%) rotate(0deg);
+  }
+}
+@keyframes entryServC4 {
+  0% {
+    transform: translate(400%, 20%) rotate(0deg);
+  }
+  30% {
+    transform: translate(-300%, 20%) rotate(-20deg);
+  }
+  50% {
+    transform: translate(-200%, -10%) rotate(-10deg);
+  }
+  70% {
+    transform: translate(-100%, -25%) rotate(0deg);
+  }
+  90% {
+    transform: translate(0%, -10%) rotate(10deg);
+  }
+  100% {
+    transform: translate(0%, -10%) rotate(10deg);
+  }
+}
+@keyframes entryServC5 {
+  0% {
+    transform: translate(300%, 20%) rotate(0deg);
+  }
+  30% {
+    transform: translate(-400%, 20%) rotate(-20deg);
+  }
+  50% {
+    transform: translate(-300%, -10%) rotate(-10deg);
+  }
+  70% {
+    transform: translate(-200%, -25%) rotate(0deg);
+  }
+  90% {
+    transform: translate(-100%, -10%) rotate(10deg);
+  }
+  100% {
+    transform: translate(0%, 20%) rotate(20deg);
   }
 }
 * {
@@ -289,6 +326,7 @@ button {
   margin-left: var(--card-margin-left, 0px);
   margin-right: var(--card-margin-right, 0px);
   z-index: var(--card-z, 1);
+  pointer-events: auto;
 }
 
 .card-img {
@@ -316,7 +354,8 @@ button {
   color: #eee;
   transition: transform 0.45s ease-in-out, opacity 0.3s ease;
 }
-.card-info h2, .card-info p {
+.card-info h2,
+.card-info p {
   margin: 1rem 0;
   font-size: 1rem;
 }
@@ -329,6 +368,21 @@ button {
   align-items: center;
   flex-direction: column;
   border-radius: 2rem;
+}
+.card-service[data-id="1"] {
+  transform: translateY(100%);
+}
+.card-service[data-id="2"] {
+  transform: translateY(100%);
+}
+.card-service[data-id="3"] {
+  transform: translateY(100%);
+}
+.card-service[data-id="4"] {
+  transform: translateY(100%);
+}
+.card-service[data-id="5"] {
+  transform: translateY(100%);
 }
 .card-service .card-img {
   background-color: #092921;
@@ -354,13 +408,13 @@ button {
 }
 .card-service .card-info {
   position: absolute;
-  width: 80%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   flex-wrap: wrap;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 2rem;
   color: #eee;
   opacity: 0;
   transform: scaleX(0);
@@ -438,6 +492,7 @@ button {
     flex-wrap: wrap;
     padding: 1rem 3rem;
     color: #eee;
+    font-size: 5rem;
     opacity: 0;
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out, opacity 0.3s ease;
@@ -450,9 +505,25 @@ button {
     align-items: center;
     flex-direction: row;
   }
+  .card-service[data-id="1"] {
+    transform: translate(700%, 20%) rotate(0deg);
+  }
+  .card-service[data-id="2"] {
+    transform: translate(600%, 20%) rotate(0deg);
+  }
+  .card-service[data-id="3"] {
+    transform: translate(500%, 20%) rotate(0deg);
+  }
+  .card-service[data-id="4"] {
+    transform: translate(400%, 20%) rotate(0deg);
+  }
+  .card-service[data-id="5"] {
+    transform: translate(300%, 20%) rotate(0deg);
+  }
   .card-service .card-info {
-    width: 15%;
-    height: 70%;
+    position: absolute;
+    width: 100%;
+    height: auto;
     justify-content: center;
   }
   .card-service:hover .card-img .icon-service {
@@ -539,32 +610,36 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
   transform: scaleX(0);
+  opacity: 0;
+  pointer-events: none;
   transition: backdrop-filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .modal.active {
+  opacity: 1;
   backdrop-filter: blur(0.2rem);
   transform: scaleX(1);
+  pointer-events: auto;
 }
 
 .modal-content {
-  position: flex;
+  position: relative;
   width: 90%;
-  height: 35%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   gap: 2rem;
   border-radius: 1rem;
   background-color: rgba(0, 110, 74, 0.8);
   backdrop-filter: blur(0.3rem);
-  padding: 2rem 2rem;
+  padding: 3rem 2rem;
   color: white;
 }
 .modal-content .close {
@@ -584,6 +659,10 @@ button {
   font-size: 1.2rem;
 }
 
+.hidden-modal-content {
+  display: none;
+}
+
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .modal-content {
     width: 70%;
@@ -592,7 +671,6 @@ button {
 @media (min-width: 1024px) {
   .modal-content {
     width: 50%;
-    height: 25%;
   }
 }
 .rev-slider-content {
@@ -616,6 +694,7 @@ button {
   background-color: rgba(0, 110, 74, 0.8);
   box-shadow: 0px 0px 10px #2bffb8, inset 0px 0px 10px rgba(43, 255, 184, 0.5);
   border: solid #2bffb8 3px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 .rev-slider-content .rev-item p {
   margin: 1rem 1.5rem 1rem;
@@ -1083,15 +1162,16 @@ header .nav-bar .nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 4rem;
-  margin: 6rem 0;
+  padding: 0rem 4rem;
+  margin: 2rem 0;
 }
 #services .services-content {
   width: 100%;
   height: auto;
-  padding: 0rem;
+  padding: 8rem 0;
   display: flex;
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

@@ -2,33 +2,37 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: $z-modal;
     transform: scaleX(0);
+    opacity: 0;
+    pointer-events: none;
     transition: backdrop-filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     
     &.active {
+        opacity: 1;
         backdrop-filter: blur(0.2rem);
         transform: scaleX(1);
+        pointer-events: auto;
     }
 }
 
 .modal-content {
-    position: flex;
+    position: relative;
     width: 90%;
-    height: 35%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     gap: 2rem;
     border-radius: 1rem;
     background-color: rgba($color-secondary, 0.8);
     backdrop-filter: blur(0.3rem);
-    padding: 2rem 2rem;
+    padding: 3rem 2rem;
     color: white;
 
     .close {
@@ -53,6 +57,10 @@
 
 }
 
+.hidden-modal-content {
+    display: none;
+}
+
 @include respond-to(md) {
     .modal-content {
         width: 70%;
@@ -62,6 +70,5 @@
 @include respond-to(lg) {
     .modal-content {
         width: 50%;
-        height: 25%;
     }
 }

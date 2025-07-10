@@ -12,6 +12,10 @@ export function initEventsCardAnim() {
         return a + (b - a) * t;
     }
 
+    function isCardsInNormalState(progress: number): boolean {
+        return progress <= 0.01;
+    }
+
     function updateCards() {
         if (!eventSec || !cards.every(card => card)) return;
         const rect = eventSec.getBoundingClientRect();
@@ -38,7 +42,6 @@ export function initEventsCardAnim() {
             { y: 0, rot: 0, marginLeft: 0, marginRight: 0, z: 1 },
         ];
 
-
         cards.forEach((card, i) => {
             if (!card) return;
             // Interpolation from normal (when progress=0) to states (when progress=1)
@@ -47,13 +50,20 @@ export function initEventsCardAnim() {
             card.style.setProperty('--card-margin-left', lerp(normal[i].marginLeft, states[i].marginLeft, progress) + 'px');
             card.style.setProperty('--card-margin-right', lerp(normal[i].marginRight, states[i].marginRight, progress) + 'px');
             card.style.setProperty('--card-z', lerp(normal[i].z, states[i].z, progress).toString());
+
+            if (isCardsInNormalState(progress)) {
+                card.style.pointerEvents = 'auto';
+            } 
+            else {
+                card.style.pointerEvents = 'none';
+            }
+
         });
     }
 
-    // Actualiza en scroll y resize
+    // Update cards on scroll and resize
     window.addEventListener('scroll', updateCards);
     window.addEventListener('resize', updateCards);
 
-    // Llama una vez al cargar
     updateCards();
 }

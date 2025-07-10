@@ -1,41 +1,33 @@
 export function initModals() {
     const detailButtons = document.querySelectorAll('.btn-details');
-    const modals = document.querySelectorAll('.modal');
+    const modal = document.querySelector('.modal');
+    const modalContent = modal === null || modal === void 0 ? void 0 : modal.querySelector('.modal-content');
     detailButtons.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            closeAllModals();
+            closeModal();
             const card = btn.closest('.card-event');
-            const modal = card === null || card === void 0 ? void 0 : card.querySelector('.modal');
-            if (modal) {
+            const cardModalContent = card === null || card === void 0 ? void 0 : card.querySelector('.hidden-modal-content');
+            if (modal && modalContent && cardModalContent) {
+                modalContent.innerHTML = cardModalContent.innerHTML;
                 modal.classList.add('active');
+                const closeBtn = modalContent.querySelector('.close');
+                closeBtn === null || closeBtn === void 0 ? void 0 : closeBtn.addEventListener('click', (ev) => {
+                    ev.stopPropagation();
+                    closeModal();
+                });
             }
         });
     });
-    modals.forEach((modal) => {
-        const closeBtn = modal.querySelector('.close');
-        closeBtn === null || closeBtn === void 0 ? void 0 : closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            modal.classList.remove('active');
-        });
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    });
-    document.addEventListener('click', (e) => {
-        const anyModalOpen = document.querySelector('.modal.active');
-        if (anyModalOpen) {
-            if (!e.target.closest('.modal')) {
-                closeAllModals();
-                e.stopPropagation();
-                e.preventDefault();
-            }
+    modal === null || modal === void 0 ? void 0 : modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
         }
-    }, true);
-    function closeAllModals() {
-        document.querySelectorAll('.modal.active').forEach(m => m.classList.remove('active'));
+    });
+    function closeModal() {
+        modal === null || modal === void 0 ? void 0 : modal.classList.remove('active');
+        if (modalContent)
+            modalContent.innerHTML = '';
     }
 }
 //# sourceMappingURL=modals.js.map

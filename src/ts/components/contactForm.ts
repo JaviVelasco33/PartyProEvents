@@ -72,7 +72,7 @@ export function initContactForm() {
         // Create a new message element
         const msg = document.createElement('div');
         msg.className = 'form-success-msg';
-        msg.textContent = '¡Formulario enviado correctamente!';
+        msg.textContent = '¡Gracias por contactar PartyPro Events! Le responderemos lo antes posible.';
         document.body.appendChild(msg);
 
         // Delete the message after 2 seconds
